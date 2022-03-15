@@ -663,10 +663,10 @@ export default (e) => {
   environment.updateMatrixWorld()
   app.add(environment)
 
-  new THREE.TextureLoader().load(baseUrl + 'textures/ref.png', (texture) => {
-    texture.encoding = THREE.sRGBEncoding
-    environmentMaterial.uniforms.uTexture.value = texture
-  })
+  // new THREE.TextureLoader().load(baseUrl + 'textures/ref.png', (texture) => {
+  //   texture.encoding = THREE.sRGBEncoding
+  //   environmentMaterial.uniforms.uTexture.value = texture
+  // })
 
   let starParticles
   new THREE.TextureLoader().load(baseUrl + 'textures/star.png', (texture) => {
