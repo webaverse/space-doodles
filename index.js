@@ -20,10 +20,8 @@ import {
   starParticlesVertex,
 } from './shaders/starParticles.js'
 
-import { getComposer, scene, camera } from '../../renderer.js'
 import { smokeFragment, smokeVertex } from './shaders/smokes.js'
 import { rgbFragment, rgbVertex } from './shaders/rgb.js'
-import { spaceShipNormalData } from './data/spaceshipdata.js'
 
 const { useApp, useLoaders, useFrame, useCleanup, usePhysics, useInternals } =
   metaversefile
@@ -56,16 +54,12 @@ export default (e) => {
   const app = useApp()
   app.name = 'neon-club'
   const localPlayer = metaversefile.useLocalPlayer()
-  const composer = getComposer()
 
   // const camera = useInternals().camera
   const gl = useInternals().renderer
   const physics = usePhysics()
   gl.outputEncoding = THREE.sRGBEncoding
   gl.autoClear = false
-
-  console.log('Heloooooooooo ' + localPlayer)
-
   // const customOutline = new CustomOutlinePass(
   //   new THREE.Vector2(window.innerWidth, window.innerHeight),
   //   rootScene,
@@ -289,7 +283,7 @@ export default (e) => {
       gltfLoader.load(params.filePath + params.fileName, (gltf) => {
         gltf.scene.traverse((child) => {
           if (child.isMesh) {
-            console.log(child.name)
+            // console.log(child.name)
             child.rotation.set(
               params.rotation.x,
               params.rotation.y,
