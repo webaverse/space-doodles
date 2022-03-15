@@ -85,7 +85,7 @@ export default (e) => {
   // )
 
   const threeTone = new THREE.TextureLoader().load(
-    baseUrl + '/textures/threeTone.jpg'
+    baseUrl + 'textures/threeTone.jpg'
   )
   threeTone.minFilter = threeTone.magFilter = THREE.NearestFilter
 
@@ -669,13 +669,13 @@ export default (e) => {
   environment.updateMatrixWorld()
   app.add(environment)
 
-  new THREE.TextureLoader().load(baseUrl + '/textures/ref.png', (texture) => {
+  new THREE.TextureLoader().load(baseUrl + 'textures/ref.png', (texture) => {
     texture.encoding = THREE.sRGBEncoding
     environmentMaterial.uniforms.uTexture.value = texture
   })
 
   let starParticles
-  new THREE.TextureLoader().load(baseUrl + '/textures/star.png', (texture) => {
+  new THREE.TextureLoader().load(baseUrl + 'textures/star.png', (texture) => {
     texture.encoding = THREE.sRGBEncoding
     const particleGeo = new THREE.IcosahedronBufferGeometry(470, 1)
     const particleMaterial = new THREE.ShaderMaterial({
